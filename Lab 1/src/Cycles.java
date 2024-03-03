@@ -54,7 +54,20 @@ import java.util.*;
 
 // }
 
+/**
+ * This class calculates the number of cycles in an undirected graph based on its adjacency matrix.
+ * 
+ * @author Eliza Doltu
+ */
+
 public class Cycles {
+
+     /**
+     * Method to find the number of cycles in a graph based on its adjacency matrix.
+     * 
+     * @param adjacencyMatrix The adjacency matrix representing the graph.
+     * @return The number of cycles in the graph.
+     */
 
     static int numberOfCycles(int [][] adjacencyMatrix) {
 
@@ -73,6 +86,15 @@ public class Cycles {
         return numberCycles / 2;
     }
 
+     /**
+     * Method to perform depth-first search (DFS) to find cycles in the graph.
+     * 
+     * @param adjacencyMatrix The adjacency matrix representing the graph.
+     * @param startVertex The starting vertex for DFS.
+     * @param currentVertex The current vertex during DFS traversal.
+     * @param visited An array to keep track of visited vertices.
+     * @return The number of cycles found from the current vertex.
+     */
     // DFS method 
     static int dfsCycle(int [][] adjacencyMatrix, int startVertex, int currentVertex, boolean [] visited) {
 

@@ -1,3 +1,9 @@
+/**
+ * This class are the solutions for Lab 1 for Advanced Programming FII UAIC.
+ * 
+ * @author Eliza Doltu
+ */
+
 public class App {
 
     // Define constants
@@ -7,6 +13,15 @@ public class App {
     // Language array
     static String languages[] = {"C", "C++", "C#", "Python", "Go", "Rust", "JavaScript", "PHP", "Swift", "Java"};
 
+    /**
+     * Main method to test the functionality
+     * 
+     * @param args
+     * @param NUM_LANGUAGES for String languages
+     * @param NUM_VERTICESB mainly to verify that the class Cycles is working
+     * @param Cycles main class for DFS search 
+     * 
+     */
     public static void main(String[] args) {
 
         long startTime = System.nanoTime();
@@ -69,6 +84,11 @@ public class App {
     }
 
     // Recursive function for sum of digits
+    /**
+     * 
+     * @param number
+     * @return the sum of digits in a recursive way. till the number has a digit
+     */
     public static int sumOfDigits(int number) {
         int prevSum = 0;
         while (number > 0) {
@@ -78,6 +98,12 @@ public class App {
         return (prevSum < 10) ? prevSum : sumOfDigits(prevSum);
     }
 
+    /**
+     * 
+     * @param number
+     * @param kFactor
+     * @return true or false if the number is k-reductible
+     */
     // Function to check if a number is k-reductible
     public static boolean intKReductible(int number, int kFactor) {
         int sum = 0;
@@ -89,6 +115,12 @@ public class App {
         return (sum >= 10) ? intKReductible(sum, kFactor) : (sum == kFactor);
     }
 
+    /**
+     * 
+     * @param a
+     * @param b
+     * @param kFactor
+     */
     // Function to find all k-reductible numbers in a range
     public static void allKReductibleNumbers(int a, int b, int kFactor) {
         System.out.println("K-reductible numbers:");
@@ -99,6 +131,11 @@ public class App {
         }
     }
 
+    /**
+     * 
+     * @param verticesNumber
+     * @return the adjacency matrix of a wheel ghraph based on the number of vertices
+     */
     // Function to generate the adjacency matrix of a wheel graph
     public static int[][] WheelGraphMatrix(int verticesNumber) {
         int[][] adjacencyMatrix = new int[verticesNumber][verticesNumber];
@@ -115,6 +152,10 @@ public class App {
         return adjacencyMatrix;
     }
 
+    /**
+     * 
+     * @param matrix
+     */
     // Function to print a matrix
     public static void printMatrix(int[][] matrix) {
         for (int i = 0; i < matrix.length; i++) {
