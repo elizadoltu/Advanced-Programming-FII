@@ -2,7 +2,7 @@ public class App {
 
     // Define constants
     static final int NUM_LANGUAGES = 10;
-    static final int NUM_VERTICES = 5;
+    static final int NUM_VERTICES = 4;
 
     // Language array
     static String languages[] = {"C", "C++", "C#", "Python", "Go", "Rust", "JavaScript", "PHP", "Swift", "Java"};
@@ -52,8 +52,13 @@ public class App {
         printMatrix(adjacencyMatrix);
 
         // Find and print the number of cycles in the graph
-        int numCycles = Cycles.dfsCycle(adjacencyMatrix);
+        int numCycles = Cycles.numberOfCycles(adjacencyMatrix);
         System.out.println("Number of cycles in the graph: " + numCycles);
+        System.out.println((NUM_VERTICES * NUM_VERTICES - 3 * NUM_VERTICES + 3) == numCycles);
+
+        // After an investigation
+        // So, i did the clasic DFS search for all the cycles (in theory)
+        // And i tested with the wheel graph, why ther number is different with the one if i use the formula?!?!? 
 
         long endTime = System.nanoTime();
         long elapsedTime = endTime - startTime;
