@@ -23,3 +23,10 @@
 - Give a name to your project: `Lab 1`
 - Go to the `src` folder were you are going to find the `App.java` file
 - Happy Coding!!
+
+## Strucutre of the repository
+Each directory has a Java project with homework and bonus
+> Starting with Lab 2, the structure will be the next one:
+> - No. of the lab. Example `Lab 2`
+> - Three more directories: `Compulsory`, `Homework`, `Bonus`
+> - Each of these directories will have a Java project 
