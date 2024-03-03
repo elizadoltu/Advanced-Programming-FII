@@ -1,5 +1,5 @@
 /**
- * This class are the solutions for Lab 1 for Advanced Programming FII UAIC.
+ * This class is for the solutions of Lab 1 for Advanced Programming FII UAIC.
  * 
  * @author Eliza Doltu
  */
