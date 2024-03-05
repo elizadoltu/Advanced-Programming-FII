@@ -55,18 +55,15 @@ public class App {
         // Find all k-reductible numbers
         allKReductibleNumbers(a, b, kFactor);
 
-        // Print command line arguments
         System.out.println("Command line arguments:");
         for (String arg : args) {
             System.out.println(arg);
         }
 
-        // Generate and print adjacency matrix of a wheel graph
         int[][] adjacencyMatrix = WheelGraphMatrix(NUM_VERTICES);
         System.out.println("Adjacency matrix of wheel graph:");
         printMatrix(adjacencyMatrix);
 
-        // Find and print the number of cycles in the graph
         int numCycles = Cycles.numberOfCycles(adjacencyMatrix);
         System.out.println("Number of cycles in the graph: " + numCycles);
         System.out.println((NUM_VERTICES * NUM_VERTICES - 3 * NUM_VERTICES + 3) == numCycles);
@@ -83,7 +80,7 @@ public class App {
         System.out.println("Running time in milliseconds: " + elapsedTimeMilliseconds);
     }
 
-    // Recursive function for sum of digits
+    // Recursive method for sum of digits
     /**
      * 
      * @param number
@@ -104,7 +101,7 @@ public class App {
      * @param kFactor
      * @return true or false if the number is k-reductible
      */
-    // Function to check if a number is k-reductible
+    // Method to check if a number is k-reductible
     public static boolean intKReductible(int number, int kFactor) {
         int sum = 0;
         while (number > 0) {
