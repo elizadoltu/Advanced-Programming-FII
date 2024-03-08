@@ -1,24 +1,22 @@
+package src;
 /**
  * @author Eliza - Teodora Doltu
 */
 
-public class Vehicle {
+public abstract class Vehicle {
     
-    private String carName;
-    private Depot depot;
+    protected String carName;
+    protected Depot depot;
 
     /**
      * 
      * @param name
+     * @param depot
      */
-    public Vehicle(String name, Depot depot) {
-        this.carName = name;
-        this.depot = depot;
-    }
 
-    @Override
-    public String toString() {
-        return "Vehicle{depot='" + depot + "', carName=" + carName + '}';
+    public Vehicle(String name, Depot depot) {
+      this.carName = name;
+      this.depot = depot;
     }
 
     @Override
@@ -33,6 +31,7 @@ public class Vehicle {
     public String getCarName() {
       return this.carName;
     }
+
     public void setCarName(String value) {
       this.carName = value;
     }
@@ -40,6 +39,7 @@ public class Vehicle {
     public Depot getDepot() {
       return this.depot;
     }
+
     public void setDepot(Depot value) {
       this.depot = value;
     }
