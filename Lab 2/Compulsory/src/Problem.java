@@ -1,4 +1,4 @@
-package src;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,15 +28,21 @@ public class Problem {
      * 
      * @return allVehicles
      */
-    public Vehicle[] getVehicles() {
+    
+    public String getVehicles() {
+        if (depots == null) {
+            return "No"; // Return an empty array if depots is null
+        }
 
-        List<Vehicle> allVehicles = new ArrayList<>();
+        StringBuilder allVehicles = new StringBuilder();
         for (Depot depot : depots) {
-            for (Vehicle vehicle : depot.getVehicles()) {
-                allVehicles.add(vehicle);
+            if (depot != null && depot.getVehicles() != null) {
+                for (Vehicle vehicle : depot.getVehicles()) {
+                    allVehicles.append(vehicle).append("\n");
+                }
             }
         }
-        return allVehicles.toArray(new Vehicle[0]);
+        return allVehicles.toString();
     }
 
     public Client[] getClients() {

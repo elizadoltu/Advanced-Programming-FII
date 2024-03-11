@@ -1,4 +1,7 @@
+
+
 import java.time.LocalTime;
+
 
 enum ClientType {
     REGULAR,
@@ -13,6 +16,13 @@ public class Client {
     private LocalTime maxTime;
     private ClientType clientType;
 
+    /**
+     * 
+     * @param name
+     * @param minTime
+     * @param maxTime
+     * @param type
+     */
     public Client(String name, LocalTime minTime, LocalTime maxTime, ClientType type) {
 
         this.name = name;
@@ -45,6 +55,10 @@ public class Client {
         return this.maxTime;
     }
 
+    /**
+     * 
+     * @param clientType
+     */
     public void setClientType(ClientType clientType) {
         this.clientType = clientType;
     }
@@ -57,4 +71,14 @@ public class Client {
     public String toString() {
         return "Client{name='" + name + "', startTime=" + minTime + ", endTime=" + maxTime + ", type=" + clientType + '}';
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null || !(obj instanceof Client)) {
+            return false;
+        }
+        Client other = (Client) obj;
+        return name.equals(other.name);
+    }
 } 
+

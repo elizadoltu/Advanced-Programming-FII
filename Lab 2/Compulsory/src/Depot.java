@@ -1,3 +1,9 @@
+
+/**
+ * @author Eliza Doltu
+ */
+
+ 
 public class Depot {
     
     private String name;
@@ -14,16 +20,37 @@ public class Depot {
       this.name = value;
     }
 
-    public Vehicle[] getVehicles() {
-      return this.vehicles;
-    }
-    public void setVehicles(Vehicle[] value) {
-      this.vehicles = value;
-    }
-
     @Override
     public String toString() {
-        return "Depot{name='" + name + "'}";
+      StringBuilder sb = new StringBuilder();
+      sb.append("Depot{name='").append(name).append("', vehicles=[");
+      if (vehicles != null && vehicles.length > 0) {
+          for (int i = 0; i < vehicles.length; i++) {
+              sb.append(vehicles[i].getCarName());
+              if (i < vehicles.length - 1) {
+                  sb.append(", ");
+              }
+          }
+      } else {
+          sb.append("No vehicles");
+      }
+      sb.append("]}");
+      return sb.toString();
+    }
+
+    /**
+     * 
+     * @param vehicles
+     */
+    public void setVehicles(Vehicle... vehicles) {
+      this.vehicles = vehicles;
+      for (Vehicle v : vehicles) {
+        v.setDepot(this); 
+      }
+    }
+
+    public Vehicle[] getVehicles() {
+      return vehicles;
     }
     // to string 
     // equals
@@ -35,4 +62,13 @@ public class Depot {
     //     Vehicle other = (Vehicle) obj;
     //     return 
     // }
+
+    @Override
+    public boolean equals(Object obj) {
+      if (obj == null || !(obj instanceof Depot)) {
+        return false; 
+      }
+      Depot other = (Depot) obj;
+      return name.equals(other.name);
+    }
 }
