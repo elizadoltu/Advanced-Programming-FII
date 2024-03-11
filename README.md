@@ -30,3 +30,5 @@ Each directory has a Java project with homework and bonus
 > - No. of the lab. Example `Lab 2`
 > - Three more directories: `Compulsory`, `Homework`, `Bonus`
 > - Each of these directories will have a Java project 
+
+> `javadoc -d javadoc -sourcepath Compulsory/src Compulsory/src/*.java` for generating javadoc
