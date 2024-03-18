@@ -1,4 +1,4 @@
 public interface Payable {
     
-    double getTicketPrice();
+    public double getTicketPrice();
 }

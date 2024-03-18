@@ -1,5 +1,7 @@
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 public class Trip {
@@ -12,6 +14,7 @@ public class Trip {
         this.city = city;
         this.start = start;
         this.end = end;
+        this.attractions = new ArrayList<>();
     }
 
     public String getCity() {
@@ -44,6 +47,21 @@ public class Trip {
 
     public void addAttraction(Attraction attraction) {
         attractions.add(attraction);
+    }
+
+    // New method to display visitable locations that are not payable, sorted by opening hour
+    public void displayVisitableNotPayable() {
+        List<Visitable> visitableNotPayable = new ArrayList<>();
+        for (Attraction attraction : attractions) {
+            if (attraction instanceof Visitable && !(attraction instanceof Payable)) {
+                visitableNotPayable.add((Visitable) attraction);
+            }
+        }
+        visitableNotPayable.sort(Comparator.comparing(Visitable::getOpeningHour));
+        System.out.println("Visitable locations that are not payable, sorted by opening hour:");
+        for (Visitable attraction : visitableNotPayable) {
+            System.out.println("Name: " + attraction.getName() + ", Opening Hour: " + attraction.getOpeningHour());
+        }
     }
 
     @Override
