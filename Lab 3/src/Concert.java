@@ -1,61 +1,32 @@
 import java.time.LocalDate;
 import java.time.LocalTime;
-import java.util.HashMap;
+import java.util.Date;
 import java.util.Map;
 
 public class Concert extends Attraction implements Visitable, Payable {
-
-    private double ticketPrice;
-    private LocalTime localTime;
+    private Map<LocalDate, Pair<LocalTime, LocalTime>> visitingTimetable;
+    private double entryFee;
     private int startYear;
-    private Map<LocalDate, TimeInterval> timetable;
 
-    public Concert(String name, LocalTime localTime, double ticketPrice, int startYear) {
+    public Concert(String name, Map<LocalDate, Pair<LocalTime, LocalTime>> visitingTimetable, double entryFee, int startYear) {
         super(name);
-        this.localTime = localTime;
-        this.ticketPrice = ticketPrice;
+        this.visitingTimetable = visitingTimetable;
+        this.entryFee = entryFee;
         this.startYear = startYear;
-        this.timetable = new HashMap<>();
     }
 
     @Override
-    public String getName() {
-        return this.name;
+    public Map<LocalDate, Pair<LocalTime, LocalTime>> getVisitingTimetable() {
+        return visitingTimetable;
     }
 
     @Override
-    public double getTicketPrice() {
-        return this.ticketPrice;
-    }
-
-    @Override
-    public LocalTime getOpeningHour() {
-        return this.localTime;
-    }
-
-    public void setTicketPrice(double price) {
-        this.ticketPrice = price;
+    public double getEntryFee() {
+        return entryFee;
     }
 
     @Override
     public String toString() {
-        return "Concert{name='" + name + "', ticketPrice='" + ticketPrice + "', startYear=" + startYear + "}";
-    }
-    // getters, setters, toString, equals
-    public void addToTimeTable(LocalDate date, TimeInterval timeInterval) {
-        timetable.put(date, timeInterval);
-    }
-
-    public Map<LocalDate, TimeInterval> getTimetable() {
-        return timetable;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == null || !(obj instanceof Concert)) {
-            return false;
-        }
-        Concert other = (Concert) obj;
-        return name.equals(other.name);
+        return "Concert{name='" + name + "', ticketPrice='" + entryFee + "', startYear=" + startYear + "}";
     }
 }

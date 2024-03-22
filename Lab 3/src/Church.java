@@ -1,61 +1,32 @@
-import java.time.LocalTime;
 import java.time.LocalDate;
-import java.util.*;
+import java.time.LocalTime;
+import java.util.Date;
+import java.util.Map;
 
-public class Church extends Attraction implements Visitable, Payable{
-    
-    private double ticketPrice;
-    private LocalTime localTime;
+public class Church extends Attraction implements Visitable, Payable {
+    private Map<LocalDate, Pair<LocalTime, LocalTime>> visitingTimetable;
+    private double entryFee;
     private int buildAge;
-    private Map<LocalDate, TimeInterval> timetable;
 
-    public Church(String name, LocalTime localTime, double ticketPrice, int buildAge) {
+    public Church(String name, Map<LocalDate, Pair<LocalTime, LocalTime>> visitingTimetable, double entryFee, int buildAge) {
         super(name);
-        this.localTime = localTime;
-        this.ticketPrice = ticketPrice;
+        this.visitingTimetable = visitingTimetable;
+        this.entryFee = entryFee;
         this.buildAge = buildAge;
-        this.timetable = new HashMap<>();
-    }
-    @Override
-    public double getTicketPrice() {
-        return this.ticketPrice;
     }
 
     @Override
-    public String getName() {
-        return this.name;
+    public Map<LocalDate, Pair<LocalTime, LocalTime>> getVisitingTimetable() {
+        return visitingTimetable;
     }
 
     @Override
-    public LocalTime getOpeningHour() {
-        return this.localTime;
+    public double getEntryFee() {
+        return entryFee;
     }
 
-    public void setTicketPrice(double price) {
-        this.ticketPrice = price;
-    }
-    
     @Override
     public String toString() {
-        return "Church{name='" + name + "', ticketPrice='" + ticketPrice + "', build year=" + buildAge + "}";
+        return "Church{name='" + name + "', ticketPrice='" + entryFee + "', build year=" + buildAge + "}";
     }
-
-    public void addToTimeTable(LocalDate date, TimeInterval timeInterval) {
-        timetable.put(date, timeInterval);
-    }
-
-    @Override
-    public Map<LocalDate, TimeInterval> getTimetable() {
-        return timetable;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == null || !(obj instanceof Church)) {
-            return false;
-        }
-        Church other = (Church) obj;
-        return name.equals(other.name);
-    }
-    // getters, setters, toString, equals
 }
