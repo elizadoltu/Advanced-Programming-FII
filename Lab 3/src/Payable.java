@@ -1,4 +1,3 @@
 public interface Payable {
-    
-    double getTicketPrice();
+    double getEntryFee(); 
 }

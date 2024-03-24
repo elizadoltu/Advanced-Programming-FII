@@ -1,57 +1,67 @@
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Comparator; // Import Comparator
+import java.util.Date;
 import java.util.List;
 
 public class Trip {
     private String city;
-    private LocalDate start;
-    private LocalDate end;
-    private List<Attraction> attractions = new ArrayList<>();
+    private LocalDate periodStart;
+    private LocalDate periodEnd;
+    private List<Attraction> attractions;
 
-    public Trip(String city, LocalDate start, LocalDate end) {
+    public Trip(String city, LocalDate periodStart, LocalDate periodEnd) {
         this.city = city;
-        this.start = start;
-        this.end = end;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
-    }
-
-    public LocalDate getStart() {
-        return start;
-    }
-
-    public void setStart(LocalDate start) {
-        this.start = start;
-    }
-
-    public LocalDate getEnd() {
-        return end;
-    }
-
-    public void setEnd(LocalDate end) {
-        this.end = end;
-    }
-
-    public List<Attraction> getAttractions() {
-        return attractions;
+        this.periodStart = periodStart;
+        this.periodEnd = periodEnd;
+        this.attractions = new ArrayList<>();
     }
 
     public void addAttraction(Attraction attraction) {
         attractions.add(attraction);
     }
 
+    public List<Attraction> getVisitableNotPayable() {
+        List<Attraction> visitableNotPayable = new ArrayList<>();
+        for (Attraction attraction : attractions) {
+            if (attraction instanceof Visitable && !(attraction instanceof Payable)) {
+                visitableNotPayable.add(attraction);
+            }
+        }
+        visitableNotPayable.sort(Comparator.comparing(a -> ((Visitable) a).getOpeningHour(periodStart)));
+        return visitableNotPayable;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public LocalDate getStart() {
+        return periodStart;
+    }
+
+    public LocalDate getEnd() {
+        return periodEnd;
+    }
+
+    public List<Attraction> getAttractions() {
+        return attractions;
+    }
     @Override
     public String toString() {
         return "Trip{" +
                 "city='" + city + '\'' +
-                ", start=" + start +
-                ", end=" + end +
+                ", start=" + periodStart +
+                ", end=" + periodEnd +
                 '}';
     }
+    
+    //@Override
+    // public boolean equals(Object obj) {
+    //     if (obj == null || !(obj instanceof Trip)) {
+    //         return false;
+    //     }
+    //     Trip other = (Trip) obj;
+    //     return name.equals(other.name);
+    // }
 }

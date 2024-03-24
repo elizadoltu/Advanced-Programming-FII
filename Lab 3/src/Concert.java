@@ -1,36 +1,41 @@
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.Date;
+import java.util.Map;
 
 public class Concert extends Attraction implements Visitable, Payable {
-
-    private double ticketPrice;
-    private LocalTime localTime;
+    private Map<LocalDate, Pair<LocalTime, LocalTime>> visitingTimetable;
+    private double entryFee;
     private int startYear;
 
-    public Concert(String name, LocalTime localTime, double ticketPrice, int startYear) {
+    public Concert(String name, Map<LocalDate, Pair<LocalTime, LocalTime>> visitingTimetable, double entryFee, int startYear) {
         super(name);
-        this.localTime = localTime;
-        this.ticketPrice = ticketPrice;
+        this.visitingTimetable = visitingTimetable;
+        this.entryFee = entryFee;
         this.startYear = startYear;
     }
 
     @Override
-    public double getTicketPrice() {
-        return this.ticketPrice;
+    public Map<LocalDate, Pair<LocalTime, LocalTime>> getVisitingTimetable() {
+        return visitingTimetable;
     }
 
     @Override
-    public LocalTime getOpeningHour() {
-        return this.localTime;
-    }
-
-    public void setTicketPrice(double price) {
-        this.ticketPrice = price;
+    public double getEntryFee() {
+        return entryFee;
     }
 
     @Override
     public String toString() {
-        return "Concert{name='" + name + "', ticketPrice='" + ticketPrice + "', startYear=" + startYear + "}";
+        return "Concert{name='" + name + "', ticketPrice='" + entryFee + "', startYear=" + startYear + "}";
     }
-    // getters, setters, toString, equals
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null || !(obj instanceof Concert)) {
+            return false;
+        }
+        Concert other = (Concert) obj;
+        return name.equals(other.name);
+    }
 }
