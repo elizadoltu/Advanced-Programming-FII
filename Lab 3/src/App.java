@@ -6,6 +6,7 @@ public class App {
     public static void main(String[] args) {
         // Creating visiting timetables
         Map<LocalDate, Pair<LocalTime, LocalTime>> churchTimetable = new HashMap<>();
+<<<<<<< HEAD
         churchTimetable.put(LocalDate.of(2024, 4, 1), new Pair<>(LocalTime.of(9, 0), LocalTime.of(17, 0)));
 
         Map<LocalDate, Pair<LocalTime, LocalTime>> concertTimetable = new HashMap<>();
@@ -13,28 +14,47 @@ public class App {
 
         Map<LocalDate, Pair<LocalTime, LocalTime>> statueTimetable = new HashMap<>();
         statueTimetable.put(LocalDate.of(2024, 4, 3), new Pair<>(LocalTime.of(10, 0), LocalTime.of(18, 0)));
+=======
+        churchTimetable.put(LocalDate.now(), new Pair<>(LocalTime.of(9, 0), LocalTime.of(17, 0)));
+
+        Map<LocalDate, Pair<LocalTime, LocalTime>> concertTimetable = new HashMap<>();
+        concertTimetable.put(LocalDate.now(), new Pair<>(LocalTime.of(20, 0), LocalTime.of(23, 0)));
+
+        Map<LocalDate, Pair<LocalTime, LocalTime>> statueTimetable = new HashMap<>();
+        statueTimetable.put(LocalDate.now(), new Pair<>(LocalTime.of(10, 0), LocalTime.of(18, 0)));
+>>>>>>> e462f99a86d214e9a94918ad916d393d2efaf9eb
 
         // Creating attractions
         Church church = new Church("St. Patrick's Cathedral", churchTimetable, 10.0, 1878);
         Concert concert = new Concert("Rock Concert", concertTimetable, 50.0, 2024);
         Statue statue = new Statue("Statue of Liberty", statueTimetable, 0.0, 93);
 
+<<<<<<< HEAD
+=======
+        // Creating a trip
+>>>>>>> e462f99a86d214e9a94918ad916d393d2efaf9eb
         Trip trip = new Trip("New York City", LocalDate.of(2024, 4, 1), LocalDate.of(2024, 4, 5));
         trip.addAttraction(church);
         trip.addAttraction(concert);
         trip.addAttraction(statue);
 
+        // Displaying trip information
         System.out.println("Trip to " + trip.getCity() + " from " + trip.getStart() + " to " + trip.getEnd() + ":");
         System.out.println("Attractions:");
         for (Attraction attraction : trip.getAttractions()) {
             System.out.println(attraction);
         }
 
+<<<<<<< HEAD
+=======
+        // Displaying visitable attractions that are not payable
+>>>>>>> e462f99a86d214e9a94918ad916d393d2efaf9eb
         System.out.println("Visitable attractions that are not payable:");
         List<Attraction> visitableNotPayable = trip.getVisitableNotPayable();
         for (Attraction attraction : visitableNotPayable) {
             System.out.println(attraction);
         }
+<<<<<<< HEAD
 
         TravelPlan travelPlan = new TravelPlan();
         travelPlan.addVisit(church, new Pair<>(LocalTime.of(9, 0), LocalTime.of(17, 0)));
@@ -42,5 +62,7 @@ public class App {
         travelPlan.addVisit(statue, new Pair<>(LocalTime.of(10, 0), LocalTime.of(18, 0)));
 
         travelPlan.printTravelPlan();
+=======
+>>>>>>> e462f99a86d214e9a94918ad916d393d2efaf9eb
     }
 }

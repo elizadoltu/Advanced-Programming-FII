@@ -29,6 +29,7 @@ public class Concert extends Attraction implements Visitable, Payable {
     public String toString() {
         return "Concert{name='" + name + "', ticketPrice='" + entryFee + "', startYear=" + startYear + "}";
     }
+<<<<<<< HEAD
 
     @Override
     public boolean equals(Object obj) {
@@ -38,4 +39,6 @@ public class Concert extends Attraction implements Visitable, Payable {
         Concert other = (Concert) obj;
         return name.equals(other.name);
     }
+=======
+>>>>>>> e462f99a86d214e9a94918ad916d393d2efaf9eb
 }

@@ -55,6 +55,7 @@ public class Trip {
                 ", end=" + periodEnd +
                 '}';
     }
+<<<<<<< HEAD
     
     //@Override
     // public boolean equals(Object obj) {
@@ -64,4 +65,6 @@ public class Trip {
     //     Trip other = (Trip) obj;
     //     return name.equals(other.name);
     // }
+=======
+>>>>>>> e462f99a86d214e9a94918ad916d393d2efaf9eb
 }

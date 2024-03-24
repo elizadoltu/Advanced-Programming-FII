@@ -29,6 +29,7 @@ public class Church extends Attraction implements Visitable, Payable {
     public String toString() {
         return "Church{name='" + name + "', ticketPrice='" + entryFee + "', build year=" + buildAge + "}";
     }
+<<<<<<< HEAD
     @Override
     public boolean equals(Object obj) {
         if (obj == null || !(obj instanceof Church)) {
@@ -37,4 +38,6 @@ public class Church extends Attraction implements Visitable, Payable {
         Church other = (Church) obj;
         return name.equals(other.name);
     }
+=======
+>>>>>>> e462f99a86d214e9a94918ad916d393d2efaf9eb
 }
