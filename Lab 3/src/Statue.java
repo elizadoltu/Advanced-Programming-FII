@@ -8,7 +8,8 @@ public class Statue extends Attraction implements Visitable {
     private int height;
     private double ticketPrice;
 
-    public Statue(String name, Map<LocalDate, Pair<LocalTime, LocalTime>> visitingTimetable, double ticketPrice ,int height) {
+    public Statue(String name, Map<LocalDate, Pair<LocalTime, LocalTime>> visitingTimetable, double ticketPrice,
+            int height) {
         super(name);
         this.visitingTimetable = visitingTimetable;
         this.height = height;
@@ -24,8 +25,7 @@ public class Statue extends Attraction implements Visitable {
     public String toString() {
         return "Statue{name='" + name + "', ticketPrice='" + ticketPrice + "', height=" + height + "}";
     }
-<<<<<<< HEAD
-    
+
     @Override
     public boolean equals(Object obj) {
         if (obj == null || !(obj instanceof Statue)) {
@@ -34,6 +34,4 @@ public class Statue extends Attraction implements Visitable {
         Statue other = (Statue) obj;
         return name.equals(other.name);
     }
-=======
->>>>>>> e462f99a86d214e9a94918ad916d393d2efaf9eb
 }

@@ -47,6 +47,7 @@ public class Trip {
     public List<Attraction> getAttractions() {
         return attractions;
     }
+
     @Override
     public String toString() {
         return "Trip{" +
@@ -55,16 +56,13 @@ public class Trip {
                 ", end=" + periodEnd +
                 '}';
     }
-<<<<<<< HEAD
-    
-    //@Override
+
+    // @Override
     // public boolean equals(Object obj) {
-    //     if (obj == null || !(obj instanceof Trip)) {
-    //         return false;
-    //     }
-    //     Trip other = (Trip) obj;
-    //     return name.equals(other.name);
+    // if (obj == null || !(obj instanceof Trip)) {
+    // return false;
     // }
-=======
->>>>>>> e462f99a86d214e9a94918ad916d393d2efaf9eb
+    // Trip other = (Trip) obj;
+    // return name.equals(other.name);
+    // }
 }
