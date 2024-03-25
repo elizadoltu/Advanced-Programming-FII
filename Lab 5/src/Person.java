@@ -1,7 +1,5 @@
 package person;
 
-import document.*;
-
 public record Person(String name, int id) {
 }
 

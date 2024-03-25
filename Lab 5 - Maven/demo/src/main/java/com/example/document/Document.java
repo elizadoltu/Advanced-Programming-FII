@@ -1,4 +1,4 @@
-package document;
+package com.example.document;
 
 public record Document(String name, String format) {
 }

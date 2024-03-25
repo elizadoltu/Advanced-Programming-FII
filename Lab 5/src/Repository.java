@@ -1,14 +1,10 @@
-package repository;
-
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.*;
 
-import document.*;
-import person.*;
-import invalid.*;
+
 
 public class Repository {
 

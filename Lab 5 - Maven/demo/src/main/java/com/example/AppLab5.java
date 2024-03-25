@@ -1,7 +1,19 @@
+package com.example;
 
-public class App {
-    public static void main(String[] args) throws Exception {
-        String masterDirectoryPath = "C:/Users/Admin/Desktop/Proiecte/Facultate/Advanced Programming/Advanced-Programming-FII/Doltu_1234";                                                                                                // path
+import com.example.document.*;
+import com.example.invalid.*;
+import com.example.person.*;
+import com.example.repository.*;
+
+import java.io.IOException;
+
+/**
+ * Hello world!
+ *
+ */
+public class AppLab5 {
+    public static void main(String[] args) {
+        String masterDirectoryPath = "C:/Users/Admin/Desktop/Proiecte/Facultate/Advanced Programming/Advanced-Programming-FII/Doltu_1234"; // Replace with your master directory path
 
         try {
             Repository repository = new Repository(masterDirectoryPath);

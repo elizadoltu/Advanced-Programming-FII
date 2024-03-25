@@ -1,4 +1,4 @@
-package invalid;
+package com.example.invalid;
 
 import java.io.IOException;
 

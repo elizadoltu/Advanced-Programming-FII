@@ -1,9 +1,12 @@
-package repository;
+package com.example.repository;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
+
+import com.example.invalid.InvalidRepository;
+
 import java.util.*;
 
 import document.*;
