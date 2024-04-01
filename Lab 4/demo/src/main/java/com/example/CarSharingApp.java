@@ -34,7 +34,7 @@ public class CarSharingApp {
         return persons;
     }
 
-    private static LinkedList<Driver> getSortedDrivers(List<Person> people) {
+    public static LinkedList<Driver> getSortedDrivers(List<Person> people) {
         return people.stream()
                 .filter(person -> person instanceof Driver)
                 .map(person -> (Driver) person)
@@ -42,7 +42,7 @@ public class CarSharingApp {
                 .collect(Collectors.toCollection(LinkedList::new));
     }
 
-    private static Set<Passenger> getSortedPassengers(List<Person> people) {
+    public static Set<Passenger> getSortedPassengers(List<Person> people) {
         return people.stream()
                 .filter(person -> person instanceof Passenger)
                 .map(person -> (Passenger) person)
