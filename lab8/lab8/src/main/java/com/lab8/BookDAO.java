@@ -8,7 +8,7 @@ public class BookDAO {
     private Connection connection;
 
     public BookDAO() {
-      //  this.connection = Database.getConnection();
+        // this.connection = Database.getConnection();
     }
 
     public void create(Book book) {
@@ -24,6 +24,4 @@ public class BookDAO {
             e.printStackTrace();
         }
     }
-    //aici ar mai veni si alte metode
 }
-
