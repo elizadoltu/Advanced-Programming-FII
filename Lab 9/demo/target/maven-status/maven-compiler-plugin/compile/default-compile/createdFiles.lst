@@ -1,4 +1,7 @@
 com\example\ServerApplication\ClientThread.class
-com\example\ServerApplication\GameServer.class
+com\example\ServerApplication\Game.class
 com\example\App.class
+com\example\ServerApplication\GameServer.class
+com\example\ServerApplication\CommandHandler.class
+com\example\ServerApplication\Player.class
 com\example\ClientApplication\GameClient.class
