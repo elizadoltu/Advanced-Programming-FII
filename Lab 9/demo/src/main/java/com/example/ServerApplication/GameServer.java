@@ -79,7 +79,7 @@ public class GameServer {
     }
 
     public static void main(String[] args) {
-        int port = 1234; // Change this to the desired port number
+        int port = 1234;
         GameServer server = new GameServer(port);
         server.start();
     }
